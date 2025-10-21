@@ -13,10 +13,18 @@ export default function handler(req, res) {
     return;
   }
 
-  res.status(200).json({ 
-    message: 'API is working!',
-    timestamp: new Date().toISOString(),
-    method: req.method,
-    url: req.url
-  });
+  try {
+    res.status(200).json({ 
+      message: 'API is working!',
+      timestamp: new Date().toISOString(),
+      method: req.method,
+      url: req.url,
+      success: true
+    });
+  } catch (error) {
+    res.status(500).json({ 
+      error: 'Internal server error',
+      message: error.message 
+    });
+  }
 }
