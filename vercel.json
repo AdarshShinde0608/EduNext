@@ -1,18 +1,32 @@
 {
   "version": 2,
+  "ignoreCommand": "[ \"$VERCEL_GIT_COMMIT_REF\" != \"main\" ] && exit 0; exit 1",
+  
   "builds": [
     {
+      
       "src": "edunext/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
       }
     },
-    { "src": "edunext/api/**/*.js", "use": "@vercel/node" }
+    {
+      "src": "edunext/api/**/*.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "/edunext/api/[...route].js" },
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
+    {
+      "src": "/api/(.*)",
+      "dest": "/edunext/api/[...route].js"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
