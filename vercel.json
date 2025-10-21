@@ -1,17 +1,18 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "edunext/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "build"
+        "distDir": "dist"
       }
-    }
+    },
+    { "src": "edunext/api/**/*.js", "use": "@vercel/node" }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "edunext/src/pages/$1"
-    }
+    { "src": "/api/(.*)", "dest": "/edunext/api/[...route].js" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
