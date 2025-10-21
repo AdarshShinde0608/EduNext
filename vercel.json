@@ -3,11 +3,6 @@
   "buildCommand": "cd edunext && npm run build",
   "outputDirectory": "edunext/dist",
   "installCommand": "cd edunext && npm install",
-  "functions": {
-    "edunext/api/[...route].js": {
-      "runtime": "nodejs18.x"
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
