@@ -5,6 +5,14 @@
   "installCommand": "cd edunext && npm install",
   "routes": [
     {
+      "src": "/api/test",
+      "dest": "/edunext/api/test.js"
+    },
+    {
+      "src": "/api/health",
+      "dest": "/edunext/api/health.js"
+    },
+    {
       "src": "/api/(.*)",
       "dest": "/edunext/api/[...route].js"
     },
