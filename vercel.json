@@ -1,7 +1,7 @@
 {
   "builds": [
     {
-      "src": "backend/package.json",
+      "src": "edunext/package.json",
       "use": "@vercel/static-build",
       "config": {
         "distDir": "build"
@@ -11,7 +11,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "backend/build/$1"
+      "dest": "edunext/src/pages/$1"
     }
   ]
 }
