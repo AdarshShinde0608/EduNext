@@ -21,7 +21,8 @@ const Login = () => {
     const [success, setSuccess] = useState('');
     
     const navigate = useNavigate();
-    const API_BASE_URL = 'http://localhost:5000/api';
+    // Use Vite env var if provided (set VITE_API_BASE_URL in Vercel)
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || '/api';
 
     const handleTabClick = (tab) => {
         setActiveTab(tab);

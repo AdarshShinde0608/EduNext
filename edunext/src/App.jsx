@@ -2,7 +2,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Homepage from './pages/homepage'; // lowercase 'pages'
-import Collaborators from './pages/Collaborators';
+import Collaborators from './pages/collaborators';
 import Login from './pages/login'; // Make sure this matches your actual file name
 import UserProfile from './pages/UserProfile';
 import Post from './pages/post';
