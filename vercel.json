@@ -3,15 +3,10 @@
   "buildCommand": "cd edunext && npm run build",
   "outputDirectory": "edunext/dist",
   "installCommand": "cd edunext && npm install",
-  "functions": {
-    "edunext/api/[...route].js": {
-      "runtime": "@vercel/node@3.0.7"
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/edunext/api/[...route].js"
+      "dest": "/api/[...route].js"
     },
     {
       "handle": "filesystem"
