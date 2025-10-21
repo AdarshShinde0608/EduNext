@@ -2,6 +2,7 @@
   "name": "edunext-fullstack",
   "version": "1.0.0",
   "description": "EduNext Full Stack Application",
+  "type": "module",
   "scripts": {
     "build": "cd edunext && npm run build",
     "dev": "concurrently \"cd backend && npm run dev\" \"cd edunext && npm run dev\"",
