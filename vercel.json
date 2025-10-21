@@ -1,12 +1,18 @@
 {
   "version": 2,
-  "buildCommand": "cd edunext && npm run build",
-  "outputDirectory": "edunext/dist",
-  "installCommand": "cd edunext && npm install",
+  "builds": [
+    {
+      "src": "edunext/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/edunext/api/$1"
+      "dest": "/edunext/api/[...route].js"
     },
     {
       "handle": "filesystem"
